@@ -128,7 +128,11 @@ python-yfinance         pacman          # Yahoo! Finance market data downloader 
 ### R base environment
 gcc-fortran             pacman          # Fortran front-end for GCC
 r                       pacman          # Language and environment for statistical computing and graphics
-rstudio-desktop         yay             # A powerful and productive integrated development environment (IDE) for R programming language
+### R studio installation
+rstudio-desktop-bin		yay             # An integrated development environment (IDE) for R (binary from RStudio official repository)
+$ export PATH=/usr/lib/rstudio:$PATH
+$ echo $PATH
+$ rstudio # should run now
 ### R packages
 car                     CRAN            # Companion to Applied Regression
 data.table              CRAN            # Extension of 'data.frame'
@@ -148,6 +152,13 @@ snakecase               CRAN            # Convert Strings into any Case
 tidyverse               CRAN            # R packages for data science
 qqplotr                 CRAN            # Quantile-Quantile Plot Extensions for 'ggplot2'
 
+# Additional video drivers to be sure
+lib32-mesa				pacman			# OpenGL (multilib) / An open-source implementation of the OpenGL specification (32-bit)
+lib32-vulkan-intel		pacman			# Vulkan (multilib) / Intel's Vulkan mesa driver (32-bit)
+mesa					pacman			# OpenGL / An open-source implementation of the OpenGL specification
+vulkan-intel			pacman			# vulkan / Intel's Vulkan mesa driver
+xf86-video-nouveau		pacman			# Driver / Open Source 3D acceleration driver for nVidia cards
+
 # Enable touchpad gestures
 $ sudo pacman -S libinput
 $ yay -S libinput-gestures
@@ -165,6 +176,12 @@ ttf-linux-libertine     pacman  # Serif (Libertine) and Sans Serif (Biolinum) Op
 ttf-ms-win10-auto       yay     # Microsoft Windows 10 TrueType fonts
 ## Bonus
 Xcharter: https://fontesk.com/xcharter-typeface/
+
+# Install Debian packages
+debtap					yay				# A script to convert .deb packages to Arch Linux packages, focused on accuracy. Do not use it to convert packages that already exist on official repositories or can be built from AUR!
+$ sudo debtap -u
+$ debtap <filename>.deb # generates <filename>.zst
+$ sudo pacman -S <filename>.zst # installs a package
 
 # Git settings
 $ git config --global user.name  "ivan-borovets"
