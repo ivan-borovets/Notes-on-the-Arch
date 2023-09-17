@@ -11,6 +11,7 @@ lm_sensors              pacman          # Tools for reading hardware sensors
 micro                   pacman          # Terminal-based text editor
 ncdu                    pacman          # Disk usage analyzer with an ncurses interface
 neofetch                pacman          # screenfetch, but better
+ntfs-3g					pacman			# NTFS filesystem driver and utilities
 p7zip                   pacman          # 7z zip manager
 speedtest-cli           pacman          # Speed test in terminal
 tk                      pacman          # A widget toolkit that provides a library of basic elements for building a GUI in many different programming languages # git-citool GUI
@@ -33,6 +34,7 @@ etcher-bin              yay             # Flash OS images to SD cards & USB driv
 filelight               pacman          # View disk usage
 gimp                    pacman          # Image editor
 gnome-disk-utility      pacman          # Disk Management Utility for GNOME # for disk mounting
+gparted					pacman			# A Partition Magic clone, frontend to GNU Parted
 gwenview                flathub         # A fast and easy to use image viewer
 inkscape                pacman          # Vector artwork
 kate                    pacman          # Advanced text editor (kwrite, kate)
