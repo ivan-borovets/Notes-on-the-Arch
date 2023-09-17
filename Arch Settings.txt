@@ -1,0 +1,284 @@
+# Command-line utilities
+bashmount               yay             # Tool to mount and unmount removable media from the command-line.
+cht-sh                  yay             # Everything cheat sheet
+eza                     yay             # A modern, maintained replacement for ls
+g810-led                Nix + reboot    # Linux LED controller for some Logitech G Keyboards
+git                     pacman          # Version control
+gitflow                 Nix             # Extend git with the Gitflow branching model
+gotop                   yay             # Shows processes, CPU usage etc.
+htop                    pacman          # A better 'top' command
+lm_sensors              pacman          # Tools for reading hardware sensors
+micro                   pacman          # Terminal-based text editor
+ncdu                    pacman          # Disk usage analyzer with an ncurses interface
+neofetch                pacman          # screenfetch, but better
+p7zip                   pacman          # 7z zip manager
+speedtest-cli           pacman          # Speed test in terminal
+tk                      pacman          # A widget toolkit that provides a library of basic elements for building a GUI in many different programming languages # git-citool GUI
+tree                    pacman          # Print file tree in terminal
+unzip                   pacman          # Command to unzip files
+wget                    pacman          # Download web files
+xclip                   pacman          # Tool to access the X clipboard from a console application
+yt-dlp                  pacman          # A youtube-dl fork with additional features and fixes
+zenith-nvidia           Nix             # Sort of like top or htop but with zoom-able charts, network, and disk usage, and NVIDIA GPU usage
+zip                     pacman          # Command to zip files
+zsh                     pacman          # A very advanced and programmable command interpreter (shell) for UNIX # A substitute for bash
+
+# Applications
+anki                    yay             # Spaced repetition flashcard program
+anydesk                 yay             # Desktop sharing application, providing remote support and online meetings
+ark                     flathub         # Archiving Tool
+chromium                pacman          # An open source web browser from Google
+deluge                  pacman          # Torrent client
+etcher-bin              yay             # Flash OS images to SD cards & USB drives, safely and easily
+filelight               pacman          # View disk usage
+gimp                    pacman          # Image editor
+gnome-disk-utility      pacman          # Disk Management Utility for GNOME # for disk mounting
+gwenview                flathub         # A fast and easy to use image viewer
+inkscape                pacman          # Vector artwork
+kate                    pacman          # Advanced text editor (kwrite, kate)
+kcalc                   pacman          # Scientific calculator
+keepass                 pacman          # GUI password manager with strong cryptography
+libreoffice             pacman          # More word processing
+maestral-gui            Nix             # GUI front-end for maestral (an open-source Dropbox client) for Linux # $ sudo pacman -S python-pip (pip3 for Maestral GUI) # maestral_qt to execute
+microsoft-edge-stable   yay             # The web browser from Microsoft # For Bing AI
+obsidian                pacman          # A powerful knowledge base that works on top of a local folder of plain text Markdown files
+okular                  flathub         # Document viewer (PDF, Postscript, djvu, etc.) with built-in LCD subpixel rendering
+peek                    pacman          # Easy gif creator
+pamac-all               yay             # A GUI frontend for libalpm (everything in one package - snap, flatpak, appindicator, aur, appstream) # Instead of Discover App (although, it was not removed)
+pinta                   pacman          # Paint.NET for Linux
+scribus                 pacman          # A desktop publishing program # For pdf editing
+spectacle               snapcraft       # KDE screenshot capture utility
+systemdgenie            pacman          # Systemd management utility # Systemd GUI
+telegram-desktop        flathub         # Official Telegram Desktop client # flathub, because of wireless sound errors
+timeshift               pacman          # A system restore utility for Linux # ~50Gb for the 1st snapshot
+vlc                     pacman          # Cross-platform media player and streaming server
+virtualbox              pacman          # Powerful x86 virtualization for enterprise as well as home use # https://www.microsoft.com/en-us/software-download/windows11
+qalculate-qt            pacman          # The ultimate desktop calculator
+quarto-cli-bin          yay             # Open-source scientific and technical publishing system built on Pandoc # doesn't work alone
+
+# Programming
+
+## LaTeX
+Installed from https://tug.org/texlive/quickinstall.html
+With the following additions:
+texlive-fontsrecommended    TeX Live - Recommended fonts
+texlive-fontsextra          TeX Live - Additional fonts
+IDE:
+texstudio           pacman          # TeX and LaTeX editor
+### Notes on LaTeX
+1. Very important article: https://wiki.archlinux.org/title/TeX_Live
+2. LaTeX configuration right after the installation: https://bbs.archlinux.org/viewtopic.php?pid=1381896#p1381896 + source ~/.bashrc
+
+## Java
+intellij-idea-community-edition     pacman  # IDE for Java, Groovy and other programming languages with advanced refactoring features
+jdk-openjdk                         pacman  # OpenJDK Java 20 development kit
+jre-openjdk                         pacman  # OpenJDK Java 20 full runtime environment
+maven                               pacman  # Java project management and project comprehension tool
+### Notes on Java
+1. List compatible Java environments installed: archlinux-java status
+2. Change default Java environment: archlinux-java set <JAVA_ENV_NAME> # java-20-openjdk (default)
+
+## JavaScript
+nodejs      pacman      # Evented I/O for V8 javascript
+
+## Python
+jetbrains.pycharm-community     pacman      # Python IDE for Professional Developers
+python                          pacman      # Next generation of the python high-level scripting language
+python-pipx                     pacman      # Install and Run Python Applications in Isolated Environments
+python-poetry                   pacman      # Python dependency management and packaging made easy
+python-setuptools               pacman      # Easily download, build, install, upgrade, and uninstall Python packages
+python-virtualenv               pacman      # Virtual Python Environment builder
+### Conda
+1. Mambaforge is downloaded... (https://github.com/conda-forge/miniforge#mambaforge)
+2. $ bash <mambaforge>.sh; reload terminal
+3. $ conda init; reload terminal
+4. $ conda update conda
+5. Set good solver (https://stackoverflow.com/a/76799565):
+$ conda install -n base conda-libmamba-solver
+$ conda config --set solver libmamba
+6. Before installing Jupyter, it's a good practice to update Conda to the latest version
+$ conda update -n base -c defaults conda
+7. Create new Conda environment: conda create -n myenv python=<python_version>
+$ conda create -n myenv
+8. Activate Conda environment:
+$ conda activate myenv
+9. Install Jupyter Lab:
+$ conda install -c conda-forge jupyterlab
+10. Install Quarto for Jupyter (https://quarto.org/docs/get-started/hello/jupyter.html)
+$ conda install -c conda-forge quarto
+11. Add Jupyter Snippets just in case (https://github.com/QuantStack/jupyterlab-snippets)
+$ conda install -c conda-forge jupyterlab-snippets
+#### Notes on Conda
+1. How to get rid of (base): https://askubuntu.com/questions/1026383/why-does-base-appear-in-front-of-my-terminal-prompt
+tldr: $ conda config --set changeps1 False, but better to keep (base), running "conda de-/activate <myenv>" instead
+2. To remove conda environment, try $ conda remove -n ENV_NAME --all
+### Packages
+python-matplotlib       pacman          # Python plotting package
+python-numba            pacman          # Compiling Python code using LLVM
+python-numpy            pacman          # Fundamental package for array computing in Python
+python-openpyxl         pacman          # Python library to read/write Excel 2010 xlsx/xlsm files
+python-pandas           pacman          # Powerful data structures for data analysis, time series, and statistics
+python-scipy            pacman          # Fundamental algorithms for scientific computing in Python
+python-seaborn          pacman          # Statistical data visualization
+python-sympy            pacman          # A Python library for symbolic mathematics
+python-plotly           pacman          # An open-source, interactive graphing library
+python-yfinance         pacman          # Yahoo! Finance market data downloader (+faster Pandas Datareader)
+
+## R
+### R base environment
+gcc-fortran             pacman          # Fortran front-end for GCC
+r                       pacman          # Language and environment for statistical computing and graphics
+rstudio-desktop         yay             # A powerful and productive integrated development environment (IDE) for R programming language
+### R packages
+car                     CRAN            # Companion to Applied Regression
+data.table              CRAN            # Extension of 'data.frame'
+DHARMa                  CRAN            # Residual Diagnostics for HierARchical Models
+emmeans                 CRAN            # Estimated Marginal Means, aka Least-Squares Means
+ggstatsplot             CRAN            # 'ggplot2' Based Plots with Statistical Details
+latex2exp               CRAN            # Use LaTeX Expressions in Plots
+lme4                    CRAN            # Linear Mixed-Effects Models using 'Eigen' and S4
+lmerTest                CRAN            # Tests in Linear Mixed Effects Models
+MASS                    CRAN            # Support Functions and Datasets for Venables and Ripley's MASS
+multcomp                CRAN            # Simultaneous Inference in General Parametric Models
+pacman                  CRAN            # Package Management Tool
+performance             CRAN            # Assessment of Regression Models Performance
+report                  CRAN            # Automated Reporting of Results and Statistical Models
+see                     CRAN            # Model Visualisation Toolbox for 'easystats' and 'ggplot2'
+snakecase               CRAN            # Convert Strings into any Case
+tidyverse               CRAN            # R packages for data science
+qqplotr                 CRAN            # Quantile-Quantile Plot Extensions for 'ggplot2'
+
+# Enable touchpad gestures
+$ sudo pacman -S libinput
+$ yay -S libinput-gestures
+$ reboot
+Then KDE will allow to enable touchpad gestures
+
+# Fonts
+libertinus-font         pacman  # Fonts based on Linux Libertine/Biolinum, with extended math support
+ttf-bitstream-charter   yay     # A serif typeface designed by Matthew Carter for low resolution devices. Provides OTF, TTF and fontconfig configuration.
+ttf-google-fonts-git    yay     # TrueType fonts from the Google Fonts project (git version)
+ttf-hack                pacman  # A hand groomed and optically balanced typeface based on Bitstream Vera Mono.
+ttc-iosevka             pacman  # Typeface family designed for coding, terminal use and technical documents.
+ttf-jetbrains-mono      pacman  # Typeface for developers, by JetBrains
+ttf-linux-libertine     pacman  # Serif (Libertine) and Sans Serif (Biolinum) OpenType fonts with large Unicode coverage
+ttf-ms-win10-auto       yay     # Microsoft Windows 10 TrueType fonts
+## Bonus
+Xcharter: https://fontesk.com/xcharter-typeface/
+
+# Git settings
+$ git config --global user.name  "jj"
+$ git config --global user.email "jj@jj.jj"
+$ git config --global core.editor "micro"
+
+# Speed up GRUB boot
+update-grub     yay     Simple wrapper around grub-mkconfig
+Then try this: https://askubuntu.com/questions/67874/speed-up-booting-time-without-losing-choosing-capability-in-grub/67877#67877
+tldr:
+1. $ sudo micro /etc/default/grub
+2. Change GRUB_TIMEOUT=10 to GRUB_TIMEOUT=0
+3. $ sudo update-grub
+
+# Some shell improvements
+1. zsh full installation: https://wiki.archlinux.org/title/zsh
+2. In ~ create /.zsh
+3. Install powerlevel10k: https://github.com/romkatv/powerlevel10k#manual
+tldr:
+$ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.zsh/powerlevel10k
+$ echo 'source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+Then reload shell and configure zsh through dialogue
+4. Install zsh-autosuggestions (https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#manual-git-clone)
+tldr with corrections:
+$ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+$ echo 'source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh' >>~/.zshrc
+5. Create aliases. In ~/.zshrc add:
+```
+# Aliases
+alias backup="(
+	cp -u /home/jj/Passwords/Database-PC.kdbx '/run/media/jj/ADATA HD650/Пароли/Database-HDD.kdbx'
+	cp -u /home/jj/Passwords/Database-PC.kdbx '/home/jj/Dropbox (Maestral)/Passwords/Database-Dropbox.kdbx'
+	echo 'Passwords backups are made'
+)"
+alias jup="(
+	conda activate myenv
+	jupyter lab
+)"
+alias ledkey="sudo /home/jj/.nix-profile/bin/g512-led -fx color keys 4838F3"
+alias ls="eza --icons --git --header --group-directories-first -l"
+alias zconf="micro ~/.zshrc"
+```
+Then reload shell
+## More shell improvements
+1. If in zsh delete key inserts tilda: https://superuser.com/questions/997593/why-does-zsh-insert-a-when-i-press-the-delete-key
+2. If fonts in micro are barely seen: Ctrl+E + set colorscheme gruvbox
+
+# Some KDE improvements
+file-roller-kde-service-menu    pacman  # File-roller 'Extract' and 'Compress' options in dolphin right-click menu
+
+# Use Discover & Flathub w/o problems
+$ pacman -S packagekit-qt5 flatpak fwupd
+
+# Systemd services
+Read journal: journalctl -u <service/journal name>
+## Logitech keyboard color service
+$ micro /etc/systemd/system/keyboard-led.service
+```
+[Unit]
+Description=Set G512 LED color on boot and after suspend
+After=suspend.target
+
+[Service]
+Type=oneshot
+ExecStartPre=/usr/bin/bash -c 'echo "Trying to set up keyboard"'
+ExecStart=sudo /home/jj/.nix-profile/bin/g512-led -fx color keys 4838F3
+ExecStartPost=/usr/bin/bash -c 'echo "Keyboard is set up"'
+
+StandardOutput=journal+console
+StandardError=journal+console
+
+[Install]
+WantedBy=multi-user.target
+WantedBy=suspend.target
+```
+$ sudo systemctl daemon-reload
+$ sudo systemctl enable keyboard-led.service
+$ sudo systemctl start keyboard-led.service
+## Password backup service
+$ micro /etc/systemd/system/passwords-backup.service
+```
+[Unit]
+Description=Password Backup Service
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/bash -c 'echo "Trying to make passwords backup" && \
+	cp -u /home/jj/Passwords/Database-PC.kdbx '\''/run/media/jj/ADATA HD650/Пароли/Database-HDD.kdbx'\'' && \
+	cp -u /home/jj/Passwords/Database-PC.kdbx '\''/home/jj/Dropbox (Maestral)/Passwords/Database-Dropbox.kdbx'\'' && \
+	echo "Passwords backups are made"'
+
+Restart=on-failure
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
+```
+$ sudo systemctl daemon-reload
+$ sudo systemctl enable passwords-backup.service
+$ sudo systemctl start passwords-backup.service
+## Password backup timer
+$ micro /etc/systemd/system/passwords-backup.timer
+```
+[Unit]
+Description=Run Backup Passwords service every 1 hour
+
+[Timer]
+OnUnitActiveSec=1h
+Unit=passwords-backup.service
+
+[Install]
+WantedBy=timers.target
+```
+$ sudo systemctl daemon-reload
+$ sudo systemctl enable passwords-backup.timer
+$ sudo systemctl start passwords-backup.timer

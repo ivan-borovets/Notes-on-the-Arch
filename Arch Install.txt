@@ -1,0 +1,84 @@
+# Attention! The following applies to BIOS only. If you have UEFI, please refer to other manuals.
+# Bigger font
+setfont cyr-sun16 -d
+# Connecting to WLAN
+iwctl
+    device list
+    station <device> scan
+    station <device> get-networks
+    station <device> connect <SSID>
+    exit
+# Check internet connection
+ping ya.ru
+# Sync Linux system clock with NTP server
+timedatectl set-ntp true
+# Upgrade packages
+pacman -Sy
+# Get disk names
+lsblk
+# Erase everything
+gdisk /dev/<disk name>
+x; z; y; y
+# Create partitions
+cfdisk /dev/<disk name>
+1Gb     BIOS boot   p1
+8Gb     swap        p2
+115Gb   root        p3
+115Gb   home        p4
+write
+# Format partitions
+mkfs.fat -F32 /dev/<diskname>p1 # boot
+mkfs.ext4 /dev/<diskname>p3 # root
+mkfs.ext4 /dev/<diskname>p4 # home
+mkswap /dev/<diskname>p2 -L # swap
+swapon /dev/<diskname>p2
+# Mount partitions
+mount /dev/<diskname>p3 /mnt # root
+mkdir /mnt/home
+mount /dev/<diskname>p4 /mnt/home #home
+# Load base packages
+pacstrap -i /mnt base base-devel linux linux-firmware linux-headers sudo nano micro nftables firewall dbus-broker networkmanager efibootmgr
+# Generate fstab, configure root
+genfstab -U -p /mnt >> /mnt/etc/fstab
+arch-chroot /mnt /bin/bash
+micro /etc/locale.gen # uncomment en_US.UTF-8 UTF-8, ru_RU.UTF-8 UTF-8
+locale-gen
+echo "LANG=en_US.UTF-8" > /etc/locale.conf
+ln -sf /usr/share/zoneinfo/<region>/<city> /etc/localtime
+hwclock --systohc --utc
+echo <hostname> > /etc/hostname
+micro etc/hosts
+    127.0.0.1    localhost
+    ::1          localhost
+    127.0.1.1    <hostname>.localdomain    <hostname>
+systemctl enable NetworkManager
+useradd -m -g users -G wheel -s /bin/bash <username>
+passwd <username>
+EDITOR=micro visudo # uncomment %wheel ALL=(ALL) ALL
+# Below, please refer to the Arch Wiki if you encounter problems
+# This guide applies only to custom BIOSes (not UEFI)
+pacman -S grub
+sudo grub-install --recheck /dev/<diskname>
+grub-mkconfig -o /boot/grub/grub.cfg
+passwd
+exit
+umount -R /mnt
+reboot
+# Arch boots
+systemctl start systemd.resolved
+nmtui
+...
+sudo usermod -a -G audio <user>
+sudo pacman -S xorg xorg-xinit xorg-apps mesa-libgl
+sudo pacman -S nvidia nvidia-settings
+sudo pacman -S xf86-video-intel
+...
+sudo pacman -S konsole dolphin systemsettings
+sudo pacman -S plasma sddm sddm-kcm
+systemctl enable sddm
+reboot
+...
+# Arch + KDE are basically installed
+pacman -Qe # list of all apps installed
+pacman -S yay # install yay for AUR support
+# Have fun!
