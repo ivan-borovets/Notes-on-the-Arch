@@ -167,8 +167,8 @@ ttf-ms-win10-auto       yay     # Microsoft Windows 10 TrueType fonts
 Xcharter: https://fontesk.com/xcharter-typeface/
 
 # Git settings
-$ git config --global user.name  "jj"
-$ git config --global user.email "jj@jj.jj"
+$ git config --global user.name  "ivan-borovets"
+$ git config --global user.email "130386813+ivan-borovets@users.noreply.github.com"
 $ git config --global core.editor "micro"
 
 # Speed up GRUB boot
