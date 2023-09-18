@@ -32,7 +32,9 @@ blender                 pacman          # 3D Creation/Animation/Publishing Syste
 chromium                pacman          # An open source web browser from Google
 deluge                  pacman          # Torrent client
 etcher-bin              yay             # Flash OS images to SD cards & USB drives, safely and easily
+evince                  pacman          # Document viewer (PDF, PostScript, XPS, djvu, dvi, tiff, cbr, cbz, cb7, cbt)
 filelight               pacman          # View disk usage
+foxitreader             yay             # A fast, secure and complete PDF viewer
 gimp                    pacman          # Image editor
 gnome-disk-utility      pacman          # Disk Management Utility for GNOME # for disk mounting
 gparted                 pacman          # A Partition Magic clone, frontend to GNU Parted
