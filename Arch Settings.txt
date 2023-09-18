@@ -28,6 +28,7 @@ zsh                     pacman          # A very advanced and programmable comma
 anki                    yay             # Spaced repetition flashcard program
 anydesk                 yay             # Desktop sharing application, providing remote support and online meetings
 ark                     flathub         # Archiving Tool
+blender                 pacman          # 3D Creation/Animation/Publishing System
 chromium                pacman          # An open source web browser from Google
 deluge                  pacman          # Torrent client
 etcher-bin              yay             # Flash OS images to SD cards & USB drives, safely and easily
@@ -36,12 +37,14 @@ gimp                    pacman          # Image editor
 gnome-disk-utility      pacman          # Disk Management Utility for GNOME # for disk mounting
 gparted                 pacman          # A Partition Magic clone, frontend to GNU Parted
 gwenview                flathub         # A fast and easy to use image viewer
+handbrake               pacman          # Multithreaded video transcoder
 inkscape                pacman          # Vector artwork
 kate                    pacman          # Advanced text editor (kwrite, kate)
 kcalc                   pacman          # Scientific calculator
 keepass                 pacman          # GUI password manager with strong cryptography
 libreoffice             pacman          # More word processing
 maestral-gui            Nix             # GUI front-end for maestral (an open-source Dropbox client) for Linux # $ sudo pacman -S python-pip (pip3 for Maestral GUI) # maestral_qt to execute
+meld                    pacman          # Visual diff and merge tool
 microsoft-edge-stable   yay             # The web browser from Microsoft # For Bing AI
 obsidian                pacman          # A powerful knowledge base that works on top of a local folder of plain text Markdown files
 okular                  flathub         # Document viewer (PDF, Postscript, djvu, etc.) with built-in LCD subpixel rendering
@@ -49,6 +52,7 @@ peek                    pacman          # Easy gif creator
 pamac-all               yay             # A GUI frontend for libalpm (everything in one package - snap, flatpak, appindicator, aur, appstream) # Instead of Discover App (although, it was not removed)
 pinta                   pacman          # Paint.NET for Linux
 scribus                 pacman          # A desktop publishing program # For pdf editing
+shotcut                 pacman          # Cross-platform Qt based Video Editor
 spectacle               snapcraft       # KDE screenshot capture utility
 systemdgenie            pacman          # Systemd management utility # Systemd GUI
 telegram-desktop        flathub         # Official Telegram Desktop client # flathub, because of wireless sound errors
@@ -232,7 +236,10 @@ Then reload shell
 2. If fonts in micro are barely seen: Ctrl+E + set colorscheme gruvbox
 
 # Some KDE improvements
+ffmpegthumbs                    pacman  # FFmpeg-based thumbnail creator for video files
 file-roller-kde-service-menu    pacman  # File-roller 'Extract' and 'Compress' options in dolphin right-click menu
+kdegraphics-thumbnailers        pacman  # Thumbnailers for various graphics file formats
+mediainfo-gui                   pacman  # Supplies technical and tag information about media files (GUI interface)
 
 # Use Discover & Flathub w/o problems
 $ pacman -S packagekit-qt5 flatpak fwupd
