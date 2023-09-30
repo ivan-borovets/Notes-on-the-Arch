@@ -34,7 +34,7 @@ deluge                  pacman          # Torrent client
 etcher-bin              yay             # Flash OS images to SD cards & USB drives, safely and easily
 evince                  pacman          # Document viewer (PDF, PostScript, XPS, djvu, dvi, tiff, cbr, cbz, cb7, cbt)
 filelight               pacman          # View disk usage
-foxitreader             yay             # A fast, secure and complete PDF viewer
+foxitreader             yay             # A fast, secure and complete PDF viewer # The fastest in-pdf search on Linux...
 gimp                    pacman          # Image editor
 gnome-disk-utility      pacman          # Disk Management Utility for GNOME # for disk mounting
 gparted                 pacman          # A Partition Magic clone, frontend to GNU Parted
@@ -138,7 +138,7 @@ gcc-fortran             pacman          # Fortran front-end for GCC
 r                       pacman          # Language and environment for statistical computing and graphics
 ### R studio installation
 rstudio-desktop-bin     yay             # An integrated development environment (IDE) for R (binary from RStudio official repository)
-$ export PATH=/usr/lib/rstudio:$PATH
+$ export PATH=/usr/lib/rstudio:$PATH # to ~./bashrc or ~./zshrc
 $ echo $PATH
 $ rstudio # should run now
 ### R packages
@@ -216,7 +216,8 @@ Then reload shell and configure zsh through dialogue
 tldr with corrections:
 $ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 $ echo 'source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh' >>~/.zshrc
-5. Create aliases. In ~/.zshrc add:
+5. Don't forget to move data from ~/.bashrc to ~/.zshrc
+6. Create aliases. In ~/.zshrc add:
 ```
 # Aliases
 alias backup="(
