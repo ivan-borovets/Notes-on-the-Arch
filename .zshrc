@@ -56,6 +56,7 @@ alias ledkey="sudo /home/jj/.nix-profile/bin/g512-led -fx color keys 4838F3"
 alias ls="eza --icons --git --header --group-directories-first -l"
 alias zconf="micro ~/.zshrc"
 alias rstudio="(rstudio &) && exit"
+alias okular="flatpak run org.kde.okular"
 
 # LaTeX
 export PATH=/usr/local/texlive/2023/bin/x86_64-linux:$PATH
@@ -70,3 +71,5 @@ export PATH="$PATH:/home/jj/.local/bin"
 
 # RStudio
 export PATH=/usr/lib/rstudio:$PATH
+
+
